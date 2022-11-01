@@ -2,10 +2,6 @@ name: cd
 
 on: [workflow_dispatch]
 
-defaults:
-  run:
-    working-directory: doc-builder
-
 jobs:
   cd:
     runs-on: ${{ matrix.os }}
@@ -26,12 +22,14 @@ jobs:
 
       - name: Install dependencies
         run: yarn
+        working-directory: doc-builder
 
       - name: Generate
         run: yarn generate
+        working-directory: doc-builder
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./dist
+          publish_dir: ./doc-builder/dist
