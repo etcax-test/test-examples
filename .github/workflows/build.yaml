@@ -2,6 +2,10 @@ name: cd
 
 on: [workflow_dispatch]
 
+defaults:
+  run:
+    working-directory: doc-builder
+
 jobs:
   cd:
     runs-on: ${{ matrix.os }}
@@ -11,10 +15,6 @@ jobs:
         os: [ubuntu-latest]
         node: [14]
         
-    defaults:
-      run:
-        working-directory: ./doc-builder
-
     steps:
       - name: Checkout
         uses: actions/checkout@master
