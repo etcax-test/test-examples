@@ -4,7 +4,7 @@ import json
 from pathlib import Path
 
 import requests
-import yaml
+# import yaml
 
 HERE = Path(".")
 BINDER_URL = "https://mybinder.org"
