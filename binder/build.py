@@ -20,6 +20,7 @@ def build_binder(repo, ref):
     r.raise_for_status()
     for line in r.iter_lines():
         line = line.decode("utf8", "replace")
+        print(line)
         if not line.startswith("data:"):
             continue
 
