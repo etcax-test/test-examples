@@ -34,16 +34,17 @@ def build_binder(repo, ref):
 
 
 def build_all():
-    gallery = HERE.parent / "_data/gallery.yaml"
-    with open(gallery, "r") as f:
-        examples = yaml.safe_load(f)
+    build_binder("test-examples", "main")
+#     gallery = HERE.parent / "_data/gallery.yaml"
+#     with open(gallery, "r") as f:
+#         examples = yaml.safe_load(f)
 
-    for example in examples:
-        repo = example.get("repo_url").replace("https://github.com/", "")
-        ref = example.get("ref", DEFAULT_REF)
+#     for example in examples:
+#         repo = example.get("repo_url").replace("https://github.com/", "")
+#         ref = example.get("ref", DEFAULT_REF)
 
-        print(f"Building a binder for {repo}@{ref}")
-        build_binder(repo, ref)
+#         print(f"Building a binder for {repo}@{ref}")
+#         build_binder(repo, ref)
 
 
 if __name__ == "__main__":
