@@ -36,12 +36,12 @@ jobs:
         with:
           node-version: "16"
           cache: yarn
-          cache-dependency-path: ./doc-builder/package-lock.json
+          cache-dependency-path: doc-builder/package-lock.json
       - name: Setup Pages
         uses: actions/configure-pages@v2
       - name: Install dependencies
         run: yarn install
-        working-directory: ./doc-builder
+        working-directory: doc-builder
       - name: Static HTML export with Nuxt
         run: yarn generate
       - name: Upload artifact
