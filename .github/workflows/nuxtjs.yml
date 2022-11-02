@@ -44,6 +44,7 @@ jobs:
         working-directory: doc-builder
       - name: Static HTML export with Nuxt
         run: yarn generate
+        working-directory: doc-builder
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
         with:
