@@ -34,7 +34,7 @@ def build_binder(repo, ref):
 
 
 def build_all():
-    build_binder("test-examples", "main")
+    build_binder("etcax-test/test-examples", "main")
 #     gallery = HERE.parent / "_data/gallery.yaml"
 #     with open(gallery, "r") as f:
 #         examples = yaml.safe_load(f)
